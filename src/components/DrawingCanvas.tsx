@@ -247,7 +247,8 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({ onPathComplete }) 
 
     setIsDrawing(true);
     setDrawing(true);
-    setCurrentPath([{ ...point, timestamp: Date.now() }]);
+    // CRITICAL FIX: Start path at EXACT PEAK position (not user's touch point)
+    setCurrentPath([{ ...levelData.startPosition, timestamp: Date.now() }]);
     setIsValidPath(true);
   };
 
@@ -280,8 +281,11 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({ onPathComplete }) 
     const distToFinish = distance(lastPoint, levelData.finishPosition);
 
     if (distToFinish < 60 && currentPath.length > 10) {
+      // CRITICAL FIX: Snap last point to EXACT GROUND position
+      const pathWithFixedEnd = [...currentPath.slice(0, -1), { ...levelData.finishPosition, timestamp: Date.now() }];
+      
       // Process path
-      const smoothedPath = smoothPath(currentPath);
+      const smoothedPath = smoothPath(pathWithFixedEnd);
       const reducedPath = reducePath(smoothedPath, 10);
       onPathComplete(reducedPath);
     } else {
