@@ -193,6 +193,48 @@
   50% { transform: translateX(-50%) translateY(-5px); }
 }
 
+/* Mobile Floating GO Button */
+.mobile-floating-go {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-floating-go {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background: linear-gradient(135deg, #4ECB71, #2ECC71);
+    color: white;
+    font-size: 24px;
+    font-weight: 900;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 24px rgba(78, 203, 113, 0.6), 
+                0 0 0 4px rgba(78, 203, 113, 0.2);
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive;
+    animation: pulseGlow 1.5s infinite;
+    touch-action: manipulation;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(78, 203, 113, 0.6), 
+                0 0 0 4px rgba(78, 203, 113, 0.2);
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 12px 32px rgba(78, 203, 113, 0.8), 
+                0 0 0 8px rgba(78, 203, 113, 0.3);
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
 @media (max-width: 1024px) {
   .hud-bottom {
     grid-template-columns: 1fr;
@@ -222,6 +264,11 @@
 }
 
 @media (max-width: 768px) {
+  /* Hide regular GO button on mobile - use floating button instead */
+  .go-btn {
+    display: none !important;
+  }
+  
   .game-hud {
     padding: 0;
     gap: 8px;

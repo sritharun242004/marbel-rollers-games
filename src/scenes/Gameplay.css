@@ -7,6 +7,7 @@
   flex-direction: column;
   gap: 12px;
   overflow: hidden;
+  position: relative;
 }
 
 .gameplay-header {
@@ -141,10 +142,16 @@
     gap: 8px;
     max-height: 100vh;
     max-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   
   .gameplay-container {
     gap: 8px;
+    flex: 1;
+    min-height: 0;
   }
   
   .pause-menu {

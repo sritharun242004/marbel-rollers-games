@@ -90,6 +90,20 @@ export const GameHUD: React.FC<GameHUDProps> = ({ onGo, onReset, onPause, canSta
           <p>👆 Draw a path from PEAK ⛰️ to GROUND 🏁!</p>
         </motion.div>
       )}
+
+      {/* Mobile Floating GO Button - appears after drawing */}
+      {canStart && !isPlaying && (
+        <motion.button
+          className="mobile-floating-go"
+          onClick={onGo}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: 'spring', duration: 0.5 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          🚀 START!
+        </motion.button>
+      )}
     </div>
   );
 };
