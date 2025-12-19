@@ -1,0 +1,187 @@
+.ke-meter {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  height: 100%;
+}
+
+.ke-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ke-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.ke-bar-container {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ke-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(to right, #FFD700, #FFA500);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  overflow: hidden;
+}
+
+.ke-particle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.ke-markers {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px 0;
+  font-size: 9px;
+  color: #999;
+}
+
+.ke-calculator {
+  margin-top: 12px;
+  padding: 10px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #fff5e6 100%);
+  border-radius: 8px;
+  border: 2px solid #4169E1;
+}
+
+.calculator-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #4169E1;
+  margin-bottom: 6px;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.calculator-formula {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formula-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.formula-line.calculation {
+  padding-top: 4px;
+  border-top: 1px dashed #ccc;
+}
+
+.formula-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.formula-value {
+  font-weight: bold;
+  color: #555;
+  padding: 2px 4px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+}
+
+.formula-operator {
+  color: #888;
+  font-weight: normal;
+}
+
+.highlight-mass {
+  background: #FFE4B5 !important;
+  color: #D2691E !important;
+  border: 1px solid #D2691E;
+}
+
+.highlight-speed {
+  background: #E0F7FF !important;
+  color: #0066CC !important;
+  border: 1px solid #0066CC;
+}
+
+.formula-result {
+  font-weight: bold;
+  font-size: 15px;
+  color: #4169E1;
+  padding: 3px 8px;
+  background: #FFD700;
+  border-radius: 5px;
+  border: 2px solid #4169E1;
+}
+
+.ke-info {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #666;
+  text-align: center;
+  font-weight: bold;
+  padding: 6px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .ke-meter {
+    padding: 10px;
+  }
+  
+  .ke-header {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+  
+  .ke-bar-container {
+    height: 22px;
+  }
+  
+  .ke-info {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+  
+  .calculator-title {
+    font-size: 11px;
+  }
+  
+  .formula-line {
+    font-size: 11px;
+  }
+  
+  .formula-result {
+    font-size: 13px;
+  }
+}
+

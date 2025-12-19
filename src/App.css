@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Completion Scene */
+.completion-scene {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  animation: rainbowBackground 10s infinite;
+}
+
+@keyframes rainbowBackground {
+  0% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+  25% { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+  50% { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+  75% { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+  100% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+}
+
+.completion-container {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.completion-container h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: 'Comic Sans MS', cursive;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.completion-text {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.completion-stats {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+
+.stat {
+  text-align: left;
+}
+
+.stat-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4169E1;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.stat ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stat li {
+  font-size: 16px;
+  padding: 8px 0;
+  color: #333;
+}
+
+.completion-btn {
+  background: linear-gradient(135deg, #4169E1, #1E90FF);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Comic Sans MS', cursive;
+  margin-top: 20px;
+}
+
+.completion-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .completion-container {
+    padding: 40px 20px;
+  }
+  
+  .completion-container h1 {
+    font-size: 32px;
+  }
+  
+  .completion-text {
+    font-size: 16px;
+  }
+  
+  .stat-label {
+    font-size: 16px;
+  }
+  
+  .stat li {
+    font-size: 14px;
+  }
+}
+
+/* Prevent text selection during gameplay */
+.gameplay-scene {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Smooth transitions between scenes */
+.scene-transition {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Accessibility - Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile-friendly touch targets */
+button, a, .clickable {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

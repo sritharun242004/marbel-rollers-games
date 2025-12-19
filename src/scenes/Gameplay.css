@@ -1,0 +1,139 @@
+.gameplay-scene {
+  min-height: 100vh;
+  max-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.gameplay-header {
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gameplay-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+  background: white;
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pause-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pause-menu {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 300px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pause-menu h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 32px;
+  color: #4169E1;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.resume-btn, .restart-btn, .menu-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.resume-btn {
+  background: linear-gradient(135deg, #4ECB71, #2ECC71);
+  color: white;
+}
+
+.restart-btn {
+  background: #FFA500;
+  color: white;
+}
+
+.menu-btn {
+  background: #666;
+  color: white;
+}
+
+.resume-btn:hover, .restart-btn:hover, .menu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .gameplay-scene {
+    padding: 10px;
+  }
+  
+  .pause-menu {
+    padding: 30px 20px;
+    min-width: 0;
+    width: 90%;
+    max-width: 400px;
+  }
+}
+

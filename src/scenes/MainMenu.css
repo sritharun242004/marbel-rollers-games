@@ -1,0 +1,208 @@
+.main-menu {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.game-title {
+  margin-bottom: 40px;
+}
+
+.title-text {
+  font-size: 56px;
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.title-emoji {
+  font-size: 48px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.subtitle {
+  font-size: 28px;
+  color: #666;
+  margin: 10px 0 0;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.floating-marble {
+  font-size: 60px;
+  margin: 20px 0;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.menu-btn {
+  padding: 18px 40px;
+  border: none;
+  border-radius: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Comic Sans MS', cursive;
+  color: white;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #4ECB71, #2ECC71);
+  font-size: 26px;
+}
+
+.tutorial-btn {
+  background: linear-gradient(135deg, #FFA500, #FF8C00);
+}
+
+.about-btn {
+  background: linear-gradient(135deg, #4169E1, #1E90FF);
+}
+
+.menu-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.progress-summary {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 15px;
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.progress-icon {
+  font-size: 24px;
+}
+
+.student-welcome {
+  margin: 20px 0;
+  padding: 15px 25px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 15px;
+  border: 2px solid #FFD700;
+}
+
+.welcome-message {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.welcome-message strong {
+  color: #4169E1;
+}
+
+.tagline {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.tagline p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.age-tag {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+}
+
+.background-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-marble {
+  position: absolute;
+  font-size: 30px;
+  opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+  .menu-container {
+    padding: 40px 20px;
+  }
+  
+  .title-text {
+    font-size: 40px;
+  }
+  
+  .title-emoji {
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    font-size: 22px;
+  }
+  
+  .menu-btn {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+  
+  .play-btn {
+    font-size: 22px;
+  }
+  
+  .progress-summary {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+

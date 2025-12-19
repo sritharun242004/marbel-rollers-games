@@ -1,0 +1,197 @@
+.student-name-scene {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.name-container {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 50px 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.welcome-header h1 {
+  font-size: 42px;
+  margin: 0 0 15px;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-header .subtitle {
+  font-size: 20px;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+}
+
+.character-illustration {
+  margin: 30px 0;
+}
+
+.character-icon {
+  font-size: 80px;
+  animation: cycle-animation 2s infinite;
+}
+
+@keyframes cycle-animation {
+  0%, 100% { transform: translateX(-10px) rotate(-5deg); }
+  50% { transform: translateX(10px) rotate(5deg); }
+}
+
+.name-form {
+  margin: 40px 0;
+}
+
+.name-form label {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4169E1;
+  margin-bottom: 20px;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.label-icon {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.name-input {
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 20px;
+  border: 3px solid #4169E1;
+  border-radius: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+.name-input:focus {
+  border-color: #2ECC71;
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+  transform: scale(1.02);
+}
+
+.name-input::placeholder {
+  color: #aaa;
+}
+
+.start-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #4ECB71, #2ECC71);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.start-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(46, 204, 113, 0.5);
+}
+
+.start-btn:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.start-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.info-text {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.info-text p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.info-icon {
+  font-size: 20px;
+}
+
+.age-info {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+}
+
+.background-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-element {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.15;
+}
+
+@media (max-width: 768px) {
+  .name-container {
+    padding: 40px 25px;
+  }
+  
+  .welcome-header h1 {
+    font-size: 32px;
+  }
+  
+  .welcome-header .subtitle {
+    font-size: 16px;
+  }
+  
+  .character-icon {
+    font-size: 60px;
+  }
+  
+  .name-form label {
+    font-size: 20px;
+  }
+  
+  .name-input {
+    font-size: 18px;
+    padding: 15px 20px;
+  }
+  
+  .start-btn {
+    font-size: 20px;
+    padding: 16px;
+  }
+}
+

@@ -1,0 +1,70 @@
+.marble {
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+  transition: all 0.05s ease-out;
+}
+
+.speed-lines-container {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.energy-glow {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.trail-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.motion-blur {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(5px);
+  z-index: 99;
+}
+
+.speed-line {
+  width: 15px;
+  height: 2px;
+  background: white;
+  opacity: 0.7;
+  animation: speedLine 0.3s infinite;
+  border-radius: 1px;
+}
+
+.speed-line:nth-child(2) {
+  animation-delay: 0.1s;
+  width: 12px;
+}
+
+.speed-line:nth-child(3) {
+  animation-delay: 0.2s;
+  width: 9px;
+}
+
+@keyframes speedLine {
+  0% {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-25px);
+    opacity: 0;
+  }
+}
+
