@@ -124,9 +124,27 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .gameplay-scene {
     padding: 10px;
+    gap: 10px;
+  }
+  
+  .gameplay-container {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gameplay-scene {
+    padding: 8px;
+    gap: 8px;
+    max-height: 100vh;
+    max-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+  
+  .gameplay-container {
+    gap: 8px;
   }
   
   .pause-menu {
@@ -134,6 +152,47 @@
     min-width: 0;
     width: 90%;
     max-width: 400px;
+  }
+  
+  .back-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameplay-scene {
+    padding: 6px;
+    gap: 6px;
+  }
+  
+  .gameplay-container {
+    gap: 6px;
+  }
+  
+  .pause-menu {
+    padding: 25px 15px;
+  }
+  
+  .pause-menu h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  
+  .resume-btn, .restart-btn, .menu-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-height: 700px) {
+  .gameplay-scene {
+    padding: 6px;
+    gap: 6px;
+  }
+  
+  .gameplay-container {
+    gap: 6px;
   }
 }
 

@@ -259,6 +259,12 @@ export class PhysicsEngine {
     const { position: newPosition } = 
       this.findPositionOnPath(closestPoint, closestSegmentIndex, moveDistance, segments);
     
+    // IMPORTANT: Clamp position to canvas bounds to prevent marble going off-screen
+    const clampedPosition = {
+      x: Math.max(GAME_CONFIG.MARBLE_RADIUS, Math.min(newPosition.x, 800 - GAME_CONFIG.MARBLE_RADIUS)),
+      y: Math.max(GAME_CONFIG.MARBLE_RADIUS, Math.min(newPosition.y, 600 - GAME_CONFIG.MARBLE_RADIUS))
+    };
+    
     // Calculate KE
     const newKE = this.calculateKE(newVelocity);
     
@@ -269,11 +275,11 @@ export class PhysicsEngine {
     
     // Check if marble reached end of path
     const endPoint = path[path.length - 1];
-    const distToEnd = distance(newPosition, endPoint);
+    const distToEnd = distance(clampedPosition, endPoint);
     const isAtEnd = distToEnd < GAME_CONFIG.MARBLE_RADIUS * 2;
     
     return {
-      position: newPosition,
+      position: clampedPosition,
       velocity: newVelocity,
       KE: newKE,
       isRolling: newVelocity > 0.1 && !isAtEnd,

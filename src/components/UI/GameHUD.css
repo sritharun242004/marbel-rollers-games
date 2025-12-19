@@ -110,6 +110,7 @@
   gap: 12px;
   width: 100%;
   align-items: start;
+  min-height: 0;
 }
 
 .hud-meters {
@@ -194,35 +195,48 @@
 
 @media (max-width: 1024px) {
   .hud-bottom {
-    flex-direction: column;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
   }
   
   .hud-meters {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     width: 100%;
   }
   
   .hud-controls {
+    display: flex;
     flex-direction: row;
     width: 100%;
-    min-width: 0;
+    gap: 10px;
   }
   
   .go-btn, .reset-btn {
     flex: 1;
+    padding: 14px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 768px) {
   .game-hud {
     padding: 0;
+    gap: 8px;
   }
   
   .hud-top-bar {
-    padding: 10px 15px;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 8px 12px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 8px;
+    min-height: auto;
+  }
+  
+  .level-info {
+    text-align: left;
   }
   
   .level-info h2 {
@@ -230,17 +244,86 @@
   }
   
   .level-info p {
-    font-size: 12px;
+    font-size: 11px;
   }
   
-  .hud-meters {
-    flex-direction: column;
+  .stars-display {
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  
+  .star-indicator span {
+    font-size: 20px;
+  }
+  
+  .star-speed {
+    font-size: 9px !important;
+  }
+  
+  .hud-top-right {
+    justify-content: space-between;
     width: 100%;
   }
   
-  .instructions {
+  .timer {
+    font-size: 16px;
+  }
+  
+  .pause-btn {
+    padding: 6px 10px;
+    font-size: 18px;
+  }
+  
+  .hud-bottom {
+    gap: 8px;
+  }
+  
+  .hud-meters {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .hud-controls {
+    gap: 8px;
+  }
+  
+  .go-btn, .reset-btn {
+    padding: 12px;
     font-size: 14px;
-    padding: 12px 20px;
+  }
+  
+  .go-btn {
+    font-size: 16px;
+    padding: 14px 12px;
+  }
+  
+  .instructions {
+    font-size: 12px;
+    padding: 10px 16px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hud-top-bar {
+    padding: 6px 10px;
+  }
+  
+  .level-info h2 {
+    font-size: 14px;
+  }
+  
+  .level-info p {
+    font-size: 10px;
+  }
+  
+  .timer {
+    font-size: 14px;
+  }
+  
+  .instructions {
+    font-size: 11px;
+    padding: 8px 12px;
   }
 }
 

@@ -66,15 +66,48 @@
 @media (max-width: 768px) {
   .speed-meter {
     padding: 10px;
+    gap: 8px;
+    height: auto;
+    min-height: 0;
+  }
+  
+  .meter-label {
+    font-size: 11px;
   }
   
   .speed-gauge {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
   
   .speed-zones {
     font-size: 10px;
+    gap: 3px;
+  }
+  
+  .zone {
+    padding: 2px 5px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .speed-meter {
+    padding: 8px;
+    gap: 6px;
+  }
+  
+  .meter-label {
+    font-size: 10px;
+  }
+  
+  .speed-gauge {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .speed-zones {
+    font-size: 9px;
   }
 }
 

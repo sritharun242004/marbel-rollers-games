@@ -155,33 +155,94 @@
 @media (max-width: 768px) {
   .ke-meter {
     padding: 10px;
+    height: auto;
+    min-height: 0;
   }
   
   .ke-header {
-    flex-direction: column;
-    gap: 5px;
-    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  
+  .meter-label {
+    font-size: 11px;
+  }
+  
+  .ke-value {
+    font-size: 13px;
   }
   
   .ke-bar-container {
-    height: 22px;
+    height: 20px;
   }
   
-  .ke-info {
-    font-size: 10px;
-    margin-top: 8px;
+  .ke-markers {
+    font-size: 8px;
+    padding-top: 2px;
+  }
+  
+  .ke-calculator {
+    margin-top: 10px;
+    padding: 8px;
   }
   
   .calculator-title {
-    font-size: 11px;
+    font-size: 10px;
+    margin-bottom: 5px;
   }
   
   .formula-line {
-    font-size: 11px;
+    font-size: 10px;
+    gap: 3px;
+  }
+  
+  .formula-value {
+    font-size: 10px;
+    padding: 1px 3px;
   }
   
   .formula-result {
-    font-size: 13px;
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+  
+  .ke-info {
+    font-size: 9px;
+    margin-top: 6px;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ke-meter {
+    padding: 8px;
+  }
+  
+  .meter-label {
+    font-size: 10px;
+  }
+  
+  .ke-value {
+    font-size: 12px;
+  }
+  
+  .ke-bar-container {
+    height: 18px;
+  }
+  
+  .calculator-title {
+    font-size: 9px;
+  }
+  
+  .formula-line {
+    font-size: 9px;
+  }
+  
+  .formula-result {
+    font-size: 10px;
+  }
+  
+  .ke-info {
+    font-size: 8px;
   }
 }
 
